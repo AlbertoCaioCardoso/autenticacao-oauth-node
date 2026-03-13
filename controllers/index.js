@@ -45,4 +45,14 @@ exports.login = async(req, res, next) => {
         console.log(error);
         res.render("index")
     }
+};
+
+//middleware de verificação da autenticação
+exports.checkAuth = async(req, res, next) => {
+    const auth = false;
+    if(auth){
+        next()
+    } else {
+        res.redirect("/")
+    }
 }
