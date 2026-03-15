@@ -10,6 +10,7 @@ router.post('/', controller.login)
 router.get('/signup', controller.showPageSignUp)
 router.post('/signup', controller.signup)
 router.get('/members', controller.checkAuth, controller.showMembersPage)
+router.post('/logout', controller.logout)
 router.use(controller.get404Page)
 
 module.exports = router
