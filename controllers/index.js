@@ -60,7 +60,7 @@ exports.logout = (req, res, next) => {
 
 //middleware de verificação da autenticação
 exports.checkAuth = async(req, res, next) => {
-    if(req.session && req.session.user){
+    if(req.session && req.session.user || req.isAuthenticated()){
         next()
     } else {
         res.redirect("/")
